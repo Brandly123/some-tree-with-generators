@@ -1877,7 +1877,8 @@ addLayer("t", {
     baseResource: "compacts",
     baseAmount() {return player.g.buyables[31]},
 
-    requires: new Decimal(80), 
+    requires: new Decimal(70), 
+    roundUpCost: true,
     exponent(){
         if(hasUpgrade("na",33)) return 1
         if(hasMilestone("t",11)) return 1.05
@@ -1945,7 +1946,7 @@ addLayer("t", {
         12: {
             effect(x) {
                 if(hasMilestone("t",9)) return new Decimal(x).pow(0.7).div(6)
-                return new Decimal(x).pow(0.6).div(5)
+                return new Decimal(x).pow(0.6).div(4)
             },
             cost(x) { return new Decimal(2).pow(x).mul(10) },
             display() { return `<h2>Efficiency Overclock</h2><br>Boost generator efficiency by +${format(this.effect())}<br>Costs ${format(this.cost())} leaves` },
