@@ -1880,7 +1880,7 @@ addLayer("t", {
     requires: new Decimal(70), 
     roundUpCost: true,
     exponent(){
-        if(hasUpgrade("na",33)) return 1
+        if(hasUpgrade("na",33)) return 1.0
         if(hasMilestone("t",11)) return 1.05
         if(hasMilestone("t",6)) return 1.1
         return 1.2
