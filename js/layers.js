@@ -2230,7 +2230,7 @@ addLayer("na", {
     requires: new Decimal(25), 
     getResetGain(x = player.d.points){
         if(x.lte(24)) return new Decimal(0)
-        if(x.gte(66)) return x.sub(24).pow(1.6).mul(new Decimal(1.5).pow(x.sub(61))).mul(new Decimal(10).pow(x.sub(65))).floor()
+        if(x.gte(66)) return x.sub(24).pow(1.6).mul(new Decimal(1.5).pow(x.sub(61).min(10))).mul(new Decimal(10).pow(x.sub(65).min(10))).floor()
         if(x.gte(62)) return x.sub(24).pow(1.6).mul(new Decimal(1.5).pow(x.sub(61))).floor()
         if(hasUpgrade("na",32)) return x.sub(24).pow(1.6).floor()
         return x.sub(24).pow(0.8).floor()
