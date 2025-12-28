@@ -1824,8 +1824,6 @@ addLayer("d", {
             if(!active) return;
             if(layers.d.challenges[active].canComplete()){
                 if(player.d.challenges[active] < layers.d.challenges[active].completionLimit) {
-                    player.d.challenges[active] ++;
-                    
                     if(player.d.challenges[active] >= layers.d.challenges[active].completionLimit-1){
                         doReset("d",true)
                         layers.d.challenges[active].onExit()
@@ -1834,8 +1832,8 @@ addLayer("d", {
                         doReset("d",true)
                         player.d.activeChallenge = active;
                         layers.d.challenges[active].onEnter()
-                        player.d.challenges[active] ++;
                     }
+                    player.d.challenges[active] ++;
                 }
             }
         }
@@ -2328,7 +2326,7 @@ addLayer("na", {
             cost() {return tmp.na.costincrease},
             unlocked() {return hasAchievement("a",63)},
 
-            effect(){return player.na.points.pow(2).mul(1000) },
+            effect(){return player.na.points.pow(2).mul(1000).add(1) },
             effectDisplay(){return `x${format(this.effect(), 3)}`},
         },
         32: {

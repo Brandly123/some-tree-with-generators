@@ -164,7 +164,7 @@ addLayer("a", {
         },
         61: {
             name: "<span class='id'>ACH 61 [★]<br></span>no issue salt",
-            done() {return player.d.points.gte(25)},
+            done() {return player.d.points.gte(25) && player.d.challenges[32] == 0},
             unlocked() {return hasAchievement("a",this.id) || hasAchievement("a",35)},
             tooltip: "Have 25 tears without beating 'Skill Issue' at all.<br>[★] Start with all completions of 'Skill Issue' on row 3 resets. Also unlocks new achievements.",
         },
@@ -182,33 +182,45 @@ addLayer("a", {
         },
         64: {
             name: "<span class='id'>ACH 64<br></span>the actual end",
-            done() {return player.t.points.gte(41)},
-            unlocked() {return hasAchievement("a",64)},
-            tooltip: "Have 41 trees",
-        },
-        65: {
-            name: "<span class='id'>ACH 65<br></span>the actual, actual end",
             done() {return player.t.points.gte(42)},
             unlocked() {return hasAchievement("a",64)},
             tooltip: "Have 42 trees",
         },
+        65: {
+            name: "<span class='id'>ACH 65<br></span>the actual, actual end",
+            done() {return player.t.points.gte(43)},
+            unlocked() {return hasAchievement("a",64)},
+            tooltip: "Have 43 trees",
+        },
         71: {
             name: "<span class='id'>ACH 71 ⭕<br></span>the actual, actual, actual end",
-            done() {return player.t.points.gte(43)},
+            done() {return player.t.points.gte(44)},
             unlocked() {return hasAchievement("a",65)},
-            tooltip: "Have 43 trees<br>(⭕ means I didn't playtest this part)"
+            tooltip: "Have 44 trees"
         },
         72: {
             name: "<span class='id'>ACH 72 ⭕<br></span>the actual, actual, actual, actual end",
-            done() {return player.t.points.gte(44)},
+            done() {return player.t.points.gte(45)},
             unlocked() {return hasAchievement("a",71)},
-            tooltip: "Have 44 trees<br>(⭕ means I didn't playtest this part)"
+            tooltip: "Have 45 trees<br>(⭕ means I didn't playtest this part)"
         },
         73: {
-            name: "<span class='id'>ACH 72 ⭕<br></span>the actual, actual, actual, actual end",
-            done() {return player.t.points.gte(45)},
+            name: "<span class='id'>ACH 73 ⭕<br></span>the actual, actual, actual, actual, actual end",
+            done() {return player.t.points.gte(46)},
             unlocked() {return hasAchievement("a",72)},
-            tooltip: "Have 45 trees<br>(⭕ means I didn't playtest this part)"
+            tooltip: "Have 46 trees<br>(⭕ means I didn't playtest this part)"
+        },
+        74: {
+            name: "<span class='id'>ACH 74 ⭕<br></span>the actual, actual, actual, actual, actual, actual end",
+            done() {return player.t.points.gte(47)},
+            unlocked() {return hasAchievement("a",72)},
+            tooltip: "Have 47 trees<br>(⭕ means I didn't playtest this part)"
+        },
+        75: {
+            name: "<span class='id'>ACH 75 ⭕<br></span>the actual, actual, actual, actual, actual, actual, actual end",
+            done() {return player.t.points.gte(48)},
+            unlocked() {return hasAchievement("a",72)},
+            tooltip: "Have 48 trees<br>(⭕ means I didn't playtest this part)"
         },
     },
     effect(){
