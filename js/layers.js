@@ -1888,7 +1888,7 @@ addLayer("t", {
     },
     gainMult() {
         mult = new Decimal(1)
-        if(player.t.points.gte(45)) return new Decimal(0) // incase something breaks or smth
+        
         return mult
     },
     gainExp() {
